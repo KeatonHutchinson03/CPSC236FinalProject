@@ -1,0 +1,33 @@
+Changes Made to Nibbles:
+
+Nibbles: 
+    - Original game featured one worm that would move in between a border to try and get the apple.
+    - There is only one worm and the worm grows with each apple ate by a block
+    - The worm would only be one color which was green. 
+    - There is only one difficulty setting for the game
+
+New Game Differences:
+    - The user can now pick before the game starts the difficulty of the game 
+        - line 51 introduces a new function selectDifficulty()
+            - Three different difficulties 
+                - Easy (1)
+                - Medium (2)
+                - Hard (3) 
+            - User chooses the different difficulties with numbers on keyboard
+
+    - There is an enemy worm that is always chasing the user worm trying to end the game
+        - line 168 has various logic for implementing the enemy into the border
+            - spawns on opposite side of the user worm
+            - FPS is slower for the enemy, so the user has a chance to play the game
+            - enemy tracks user's movement to track down
+            - If enemy hits apple
+                - will not grow a new tail to the worm 
+        - line 287 shows how the enemy is created 
+            - enemy is red to indictate that it is the enemy
+
+    - The color of the worm now is always changing which gives a cool visual representation. 
+        - line 301 function drawWorm() shows this change in the first couple of lines
+            -Does this by constantly changing the color of the worm randomly from a list of colors
+                -for the outer color border of the worm
+                -for the inner color of the worm 
+                -line 32 has list of color options.
